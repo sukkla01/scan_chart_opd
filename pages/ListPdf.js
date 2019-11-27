@@ -17,7 +17,9 @@ export default class ListPdf extends Component {
             arr_page: [],
             end_apge: 10,
             pagegination: 0,
-            isLoading: false
+            isLoading: false,
+            filePath: '../static/pdf/0080666.pdf'
+
 
 
         }
@@ -75,7 +77,7 @@ export default class ListPdf extends Component {
         const listPdfCard = this.state.arr.map((item, i) => {
            
             return i === 0 ? '' : item > this.state.numPages ? '' :
-                <div className="list-pages" style={{ marginTop: 50, cursor: 'pointer' }} key={i}>
+                <div className="list-pages" style={{ marginTop: 50,marginLeft:20, cursor: 'pointer' }} key={i}>
                     <span><Badge count={item} /></span> <Page pageNumber={item} width={200} onClick={() => this.onClickSelect(item)} />
                 </div>
         })
@@ -99,7 +101,7 @@ export default class ListPdf extends Component {
                 </Row>
 
                 <Document
-                    file="../static/pdf/0080666.pdf"
+                    file={this.state.filePath}
                     onLoadSuccess={this.onDocumentLoad}
 
                 >

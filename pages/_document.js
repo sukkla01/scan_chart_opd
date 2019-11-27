@@ -1,5 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 
 // import 'moment/locale/th';
 
@@ -9,7 +9,7 @@ export default class Mydocument extends Document {
             <html>
                 <Head>
 
-                    <link rel="stylesheet" href="static/antd/dist/antd.css" />
+                    {/* <link rel="stylesheet" href="static/antd/dist/antd.css" /> */}
                    
                     <link href="https://fonts.googleapis.com/css?family=Prompt|Ubuntu:400,300" rel="stylesheet" />
 

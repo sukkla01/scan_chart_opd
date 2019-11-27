@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Document, Page } from 'react-pdf';
-import { Button, Row, Col, Icon, List } from 'antd';
+import { Button, Row, Col, Icon, Layout,Menu, Divider } from 'antd';
 import ListPdf from './ListPdf';
-
+import 'antd/dist/antd.css';
 // import ReactWaterMark from 'react-pdf-watermark/dist/index';
+
+const { Header, Content, Footer } = Layout;
 
 export default class Home extends Component {
     state = {
@@ -63,6 +65,21 @@ export default class Home extends Component {
 
         return (
             <div>
+                 <Layout className="layout">
+                <Header>
+                        <div className="logo" ></div>
+                        <Menu
+                            theme="dark"
+                            mode="horizontal"
+                            defaultSelectedKeys={['2']}
+                            style={{ lineHeight: '64px' }}
+                        >
+                            <Menu.Item key="1">nav 1</Menu.Item>
+                            <Menu.Item key="2">nav 2</Menu.Item>
+                            <Menu.Item key="3">nav 3</Menu.Item>
+                        </Menu>
+                    </Header>
+                    <Divider />
                 <Row >
                     <Col span={4}>
                         <div style={{ marginTop: 50 }}>
@@ -108,7 +125,7 @@ export default class Home extends Component {
                             {/* <ReactWaterMark> */}
 
                             <Document
-                                file="../static/pdf/620006418.pdf"
+                                file={this.state.filePath}
                                 onLoadSuccess={this.onDocumentLoad}
 
                             >
@@ -121,7 +138,7 @@ export default class Home extends Component {
                 </Row>
 
 
-
+                </Layout>
 
             </div>
         )
